@@ -6,10 +6,10 @@ import { initiatives } from '../data/initiatives';
 const InitiativesPage = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="pt-32 pb-24 bg-paper min-h-screen relative overflow-hidden z-10"
     >
       {/* Texture background */}
@@ -31,13 +31,13 @@ const InitiativesPage = () => {
             <span className="text-xs font-sans uppercase tracking-[0.4em] text-accent mb-6">Our Efforts</span>
             <div className="w-16 h-[1px] bg-accent/30 mb-10"></div>
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif text-primary mb-10 leading-tight tracking-tight">Channels of <span className="italic text-accent font-normal">Impact</span></h1>
-          <p className="text-xl text-primary/70 max-w-2xl mx-auto font-serif font-light italic leading-relaxed">
+          <h1 className="text-4xl md:text-8xl font-serif text-primary mb-8 md:mb-10 leading-tight tracking-tight">Channels of <span className="italic text-accent font-normal">Impact</span></h1>
+          <p className="text-lg md:text-xl text-primary/70 max-w-2xl mx-auto font-serif font-light italic leading-relaxed">
             "Discover how we are making a difference across various sectors through our targeted programs and dedicated action."
           </p>
         </motion.div>
 
-        <div className="space-y-32 md:space-y-48">
+        <div className="space-y-24 md:space-y-48">
           {initiatives.map((initiative, index) => {
             const isEven = index % 2 === 0;
             return (
@@ -50,9 +50,9 @@ const InitiativesPage = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-24 items-center`}>
+                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 items-center`}>
                   {/* Content Card */}
-                  <div className="flex-1 w-full p-12 md:p-16 bg-dusty border border-primary/20 paper-shadow relative group overflow-hidden">
+                  <div className="flex-1 w-full p-8 md:p-16 bg-dusty border border-primary/20 paper-shadow relative group overflow-hidden">
                     {/* Photo corners */}
                     <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-primary/30 m-4"></div>
                     <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-primary/30 m-4"></div>
@@ -60,24 +60,24 @@ const InitiativesPage = () => {
                     <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-primary/30 m-4"></div>
 
                     {/* Motif Background */}
-                    <div className="absolute top-0 right-0 p-8 text-6xl font-bengali text-primary opacity-[0.03] group-hover:opacity-10 transition-opacity duration-700 select-none pointer-events-none">
-                      {initiative.id === 'education' ? 'শি' : initiative.id === 'health' ? 'স্বা' : 'উ'}
+                    <div className="absolute top-0 right-0 p-8 text-5xl md:text-6xl font-bengali text-primary opacity-[0.03] group-hover:opacity-10 transition-opacity duration-700 select-none pointer-events-none">
+                      {initiative.id === 'education' ? 'শি' : initiative.id === 'health-environment' ? 'স্বা' : initiative.id === 'music-arts' ? 'ক' : 'খে'}
                     </div>
 
-                    <span className="text-accent/80 font-sans tracking-[0.3em] uppercase text-[10px] mb-8 block">{initiative.category}</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8">{initiative.title}</h2>
-                    <p className="text-xl text-primary/75 mb-12 font-serif italic leading-relaxed">{initiative.description}</p>
+                    <span className="text-accent/80 font-sans tracking-[0.3em] uppercase text-[9px] md:text-[10px] mb-6 md:mb-8 block">{initiative.category}</span>
+                    <h2 className="text-3xl md:text-5xl font-serif text-primary mb-6 md:mb-8">{initiative.title}</h2>
+                    <p className="text-lg md:text-xl text-primary/75 mb-10 md:mb-12 font-serif italic leading-relaxed">{initiative.description}</p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12 border-t border-primary/10 pt-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 mb-10 md:mb-12 border-t border-primary/10 pt-8 md:pt-10">
                       <div>
-                        <h4 className="text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-4">Focus Area</h4>
-                        <p className="text-primary/80 font-serif italic">{initiative.focus}</p>
+                        <h4 className="text-[9px] md:text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 md:mb-4">Focus Area</h4>
+                        <p className="text-base md:text-lg text-primary/80 font-serif italic">{initiative.focus}</p>
                       </div>
                       <div>
-                        <h4 className="text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-4">Key Offerings</h4>
+                        <h4 className="text-[9px] md:text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 md:mb-4">Key Offerings</h4>
                         <div className="flex flex-wrap gap-2">
                           {initiative.offerings.map((offering, idx) => (
-                            <span key={idx} className="text-[10px] font-sans tracking-widest uppercase text-primary/60 bg-primary/5 px-3 py-1 border border-primary/10">
+                            <span key={idx} className="text-[9px] md:text-[10px] font-sans tracking-widest uppercase text-primary/60 bg-primary/5 px-2 md:px-3 py-1 border border-primary/10">
                               {offering}
                             </span>
                           ))}
@@ -85,10 +85,14 @@ const InitiativesPage = () => {
                       </div>
                     </div>
                     
-                    <div className="pt-8 border-t border-primary/10">
+                    <div className="pt-6 md:pt-8 border-t border-primary/10">
                       <Link 
-                        to={initiative.id === 'education' ? '/education-growth' : initiative.id === 'health-environment' ? '/innovative-horizons' : '/community-roots'}
-                        className="text-[10px] font-sans tracking-[0.4em] text-primary hover:text-accent transition-colors uppercase"
+                        to={
+                          initiative.id === 'education' ? '/education-growth' : 
+                          initiative.id === 'health-environment' ? '/innovative-horizons' : 
+                          '/community-roots'
+                        }
+                        className="text-[9px] md:text-[10px] font-sans tracking-[0.4em] text-primary hover:text-accent transition-colors uppercase"
                       >
                         Read Progress Story
                       </Link>
@@ -97,10 +101,10 @@ const InitiativesPage = () => {
                   
                   {/* Image/Visual Area */}
                   <div className="flex-1 w-full relative">
-                    <div className="aspect-[4/3] bg-primary/5 border border-primary/20 p-2 paper-shadow overflow-hidden group relative">
+                    <div className="aspect-[3/2] lg:aspect-[4/3] bg-primary/5 border border-primary/20 p-2 paper-shadow overflow-hidden group relative">
                       <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent mix-blend-multiply transition-all duration-1000 group-hover:scale-105 z-10"></div>
                       <div className="w-full h-full border border-primary/20 border-dashed flex items-center justify-center relative bg-dusty">
-                         <p className="text-primary/40 font-serif italic text-center p-12 relative z-20">
+                         <p className="text-primary/40 font-serif italic text-center p-8 md:p-12 text-sm md:text-base relative z-20">
                            Archival Photograph: {initiative.title}
                          </p>
                       </div>
@@ -112,7 +116,7 @@ const InitiativesPage = () => {
                       <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-primary/30 m-2"></div>
                     </div>
                     {/* Decorative element */}
-                    <div className={`absolute -bottom-6 ${isEven ? '-right-6' : '-left-6'} w-24 h-24 bg-paper border border-primary/20 rounded-full flex items-center justify-center text-3xl font-bengali text-accent/30 paper-shadow z-20`}>
+                    <div className={`absolute -bottom-4 md:-bottom-6 ${isEven ? '-right-4 md:-right-6' : '-left-4 md:-left-6'} w-16 h-16 md:w-24 md:h-24 bg-paper border border-primary/20 rounded-full flex items-center justify-center text-2xl md:text-3xl font-bengali text-accent/30 paper-shadow z-20`}>
                       ❈
                     </div>
                   </div>

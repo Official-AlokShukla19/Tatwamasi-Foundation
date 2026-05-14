@@ -61,6 +61,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Prologue', path: '/', hash: '' },
+    { name: 'About', path: '/about', hash: '' },
+    { name: 'Efforts', path: '/initiatives', hash: '' },
     { name: 'Education', path: '/education-growth', hash: '' },
     { name: 'Community', path: '/community-roots', hash: '' },
     { name: 'Innovation', path: '/innovative-horizons', hash: '' },
@@ -72,9 +74,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-3">
-              <img src={logo} alt="Tatwamasi Logo" className="w-10 h-10 object-contain mix-blend-multiply opacity-80" />
-              <span className="text-lg md:text-xl font-serif text-primary tracking-wider uppercase">Tatwamasi Foundation</span>
+            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-2 md:gap-3">
+              <img src={logo} alt="Tatwamasi Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain mix-blend-multiply opacity-80" />
+              <span className="text-sm sm:text-base md:text-xl font-serif text-primary tracking-wider uppercase truncate max-w-[200px] sm:max-w-none">Tatwamasi Foundation</span>
             </Link>
           </div>
 

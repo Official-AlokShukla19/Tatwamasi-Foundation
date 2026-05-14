@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const Education = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="bg-edu-cream text-edu-brown min-h-screen font-serif selection:bg-edu-mustard/30 relative z-10"
     >
       <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-50 z-0 pointer-events-none"></div>
@@ -31,10 +31,10 @@ const Education = () => {
             <span className="text-xs font-sans uppercase tracking-[0.4em] text-edu-orange">Chapter One</span>
             <div className="h-px w-16 bg-edu-orange/40"></div>
           </div>
-          <h1 className="text-6xl md:text-8xl text-edu-brown mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl text-edu-brown mb-8 leading-[1.1] tracking-tight">
             Education Lights the <span className="italic text-edu-mustard block mt-2">Path Forward</span>
           </h1>
-          <p className="text-xl md:text-2xl text-edu-brown/70 max-w-2xl mx-auto italic leading-relaxed">
+          <p className="text-lg md:text-2xl text-edu-brown/70 max-w-2xl mx-auto italic leading-relaxed">
             Every child carries a future. We are simply providing the notebook where they can write their own story.
           </p>
         </motion.div>

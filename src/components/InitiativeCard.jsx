@@ -5,7 +5,7 @@ const InitiativeCard = ({ initiative }) => {
   return (
     <Card className="flex flex-col h-full border border-gray-100">
       <div className="flex-1">
-        <span className="text-sm font-semibold text-accent1 uppercase tracking-wider">
+        <span className="text-sm font-semibold text-accent uppercase tracking-wider">
           {initiative.category}
         </span>
         <h3 className="text-xl font-bold text-primary mt-2 mb-3">
@@ -24,7 +24,7 @@ const InitiativeCard = ({ initiative }) => {
           {initiative.offerings.map((offering, index) => (
             <span 
               key={index}
-              className="bg-secondary/20 text-primary text-xs px-3 py-1 rounded-full font-medium"
+              className="bg-edu-orange/20 text-primary text-xs px-3 py-1 rounded-full font-medium"
             >
               {offering}
             </span>
@@ -32,7 +32,7 @@ const InitiativeCard = ({ initiative }) => {
         </div>
         <Link 
           to={`/initiatives/${initiative.id}`} 
-          className="text-accent1 hover:text-accent2 font-semibold text-sm transition-colors"
+          className="text-accent hover:text-accent/80 font-semibold text-sm transition-colors"
         >
           Learn more &rarr;
         </Link>

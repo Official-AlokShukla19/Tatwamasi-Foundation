@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const Community = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="bg-comm-beige text-comm-clay min-h-screen font-serif selection:bg-comm-terracotta/30 relative z-10"
     >
       {/* Mud-wall/Rustic texture overlay */}
@@ -24,10 +24,10 @@ const Community = () => {
           className="relative z-10 text-center max-w-5xl pt-20"
         >
           <span className="text-xs font-sans uppercase tracking-[0.5em] text-comm-terracotta mb-8 block">Our Roots</span>
-          <h1 className="text-6xl md:text-8xl text-comm-red mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl text-comm-red mb-8 leading-tight">
             Where Communities <span className="italic text-comm-olive block mt-2">Rise Together</span>
           </h1>
-          <p className="text-xl md:text-2xl text-comm-clay/80 max-w-2xl mx-auto italic leading-relaxed">
+          <p className="text-lg md:text-2xl text-comm-clay/80 max-w-2xl mx-auto italic leading-relaxed">
             A tapestry woven with shared struggles, heritage, and the unyielding strength of collective belonging.
           </p>
         </motion.div>

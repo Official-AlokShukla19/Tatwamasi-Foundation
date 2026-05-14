@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 const Innovation = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="bg-inno-midnight text-inno-silver min-h-screen font-sans selection:bg-inno-cyan/30 relative z-10"
     >
       {/* Subtle modern grid/noise overlay */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-screen pointer-events-none z-0"></div>
+      <div className="absolute inset-0 texture-overlay mix-blend-screen opacity-[0.08] pointer-events-none z-0"></div>
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pb-20">
@@ -24,12 +24,13 @@ const Innovation = () => {
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 text-center max-w-5xl pt-20"
         >
+
           <span className="text-xs font-mono uppercase tracking-[0.5em] text-inno-cyan mb-8 block">Future Forward</span>
-          <h1 className="text-6xl md:text-8xl text-inno-white mb-8 leading-tight font-light">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl text-inno-white mb-8 leading-tight font-light">
             Innovating for <br />
             <span className="text-inno-copper font-serif italic">Human Progress</span>
           </h1>
-          <p className="text-xl md:text-2xl text-inno-silver/70 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-2xl text-inno-silver/70 max-w-2xl mx-auto font-light leading-relaxed">
             Where vision meets community impact. We are building scalable, sustainable futures without losing our human roots.
           </p>
         </motion.div>

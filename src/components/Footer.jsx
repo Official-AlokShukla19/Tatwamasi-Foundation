@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="flex flex-col items-center md:items-start gap-6 mb-8 group">
-              <img src={logo} alt="Tatwamasi Logo" className="w-16 h-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+              <img src={logo} alt="Tatwamasi Logo" className="w-16 h-16 object-contain transition-all duration-700" />
               <span className="text-xl md:text-3xl font-serif tracking-widest uppercase text-dusty">Tatwamasi Foundation</span>
             </Link>
             <p className="text-dusty/60 font-serif text-lg leading-relaxed max-w-xs italic">
@@ -35,8 +35,8 @@ const Footer = () => {
             <h4 className="text-xs font-sans uppercase tracking-[0.4em] text-accent mb-8">Chapters</h4>
             <div className="flex flex-col gap-4 items-center md:items-start">
               <Link to="/about" className="text-dusty/70 hover:text-accent transition-colors font-serif italic text-xl">Our Story</Link>
-              <Link to="/#efforts" className="text-dusty/70 hover:text-accent transition-colors font-serif italic text-xl">Our Initiatives</Link>
-              <Link to="/#journey" className="text-dusty/70 hover:text-accent transition-colors font-serif italic text-xl">The Journey</Link>
+              <Link to="/initiatives" className="text-dusty/70 hover:text-accent transition-colors font-serif italic text-xl">Our Initiatives</Link>
+              <Link to="/education-growth" className="text-dusty/70 hover:text-accent transition-colors font-serif italic text-xl">Education</Link>
               <Link to="/contact" className="text-dusty/70 hover:text-dusty transition-colors font-serif italic text-xl">Get in Touch</Link>
             </div>
           </div>

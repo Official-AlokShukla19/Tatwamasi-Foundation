@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const Privacy = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       className="pt-40 pb-24 bg-paper min-h-screen relative overflow-hidden"
     >
@@ -39,15 +39,15 @@ const Privacy = () => {
               </p>
               <ul className="list-none space-y-4 mt-6">
                 <li className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-education"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-edu-orange"></div>
                   <span>Your full name</span>
                 </li>
                 <li className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-community"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-comm-terracotta"></div>
                   <span>Contact information (email address or phone number)</span>
                 </li>
                 <li className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-innovation"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-inno-cyan"></div>
                   <span>Your areas of interest for volunteering</span>
                 </li>
               </ul>

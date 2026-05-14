@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Button from './Button';
 
 const CTA = () => {
   return (
@@ -25,7 +24,7 @@ const CTA = () => {
             <div className="w-16 h-[1px] bg-accent/40"></div>
           </div>
 
-          <h2 className="text-6xl md:text-8xl font-serif text-primary mb-10 leading-tight tracking-tight">
+          <h2 className="text-4xl sm:text-6xl md:text-8xl font-serif text-primary mb-8 md:mb-10 leading-tight tracking-tight">
             Be a Part of the <br />
             <span className="italic text-accent font-normal border-b border-accent/30 pb-2">Shared Change</span>
           </h2>
@@ -35,25 +34,13 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <Link to="/get-involved" className="w-full sm:w-auto">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-12 py-5 bg-primary text-dusty border border-primary rounded-sm font-sans text-sm tracking-[0.2em] hover:bg-primary/90 transition-all duration-500 shadow-xl paper-shadow w-full"
-              >
-                JOIN THE STORY
-              </motion.button>
-            </Link>
+            <Button to="/get-involved" className="w-full sm:w-auto min-w-[200px]">
+              JOIN THE STORY
+            </Button>
             
-            <Link to="/contact" className="w-full sm:w-auto">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-12 py-5 bg-transparent text-primary border border-primary/30 rounded-sm font-sans text-sm tracking-[0.2em] hover:bg-primary/5 transition-all duration-500 w-full"
-              >
-                REACH OUT
-              </motion.button>
-            </Link>
+            <Button to="/contact" variant="outline" className="w-full sm:w-auto min-w-[200px]">
+              REACH OUT
+            </Button>
           </div>
 
           <div className="mt-32 flex flex-col items-center gap-6 opacity-30">

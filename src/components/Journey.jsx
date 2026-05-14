@@ -88,7 +88,7 @@ const Journey = () => {
                       </div>
                       
                       <div className="relative">
-                        <span className="absolute -top-8 -left-8 text-[8rem] font-serif text-primary/5 select-none font-bengali pointer-events-none">
+                        <span className="absolute -top-6 -left-6 md:-top-8 md:-left-8 text-[5rem] md:text-[8rem] font-serif text-primary/5 select-none font-bengali pointer-events-none">
                           {step.motif}
                         </span>
                         <p className="text-primary/75 font-serif leading-loose text-lg relative z-10">

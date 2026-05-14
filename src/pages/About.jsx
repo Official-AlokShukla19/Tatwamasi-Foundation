@@ -22,10 +22,10 @@ const AboutPage = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="pt-32 pb-24 bg-paper min-h-screen relative overflow-hidden"
     >
       {/* Decorative background motif */}
@@ -40,29 +40,29 @@ const AboutPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-24"
+          className="text-center mb-16 md:mb-24"
         >
           <div className="flex flex-col items-center">
-            <span className="text-sm font-sans uppercase tracking-[0.4em] text-community mb-6">Opening the Book</span>
-            <div className="w-12 h-px bg-community/30 mb-10"></div>
+            <span className="text-xs md:text-sm font-sans uppercase tracking-[0.4em] text-comm-terracotta mb-6">Opening the Book</span>
+            <div className="w-12 h-px bg-comm-terracotta/30 mb-10"></div>
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif text-ink mb-8 leading-tight">Our Origin <span className="italic text-education font-normal">Story</span></h1>
+          <h1 className="text-4xl md:text-8xl font-serif text-ink mb-8 leading-tight">Our Origin <span className="italic text-edu-orange font-normal">Story</span></h1>
         </motion.div>
 
         {/* Origin Story Content */}
-        <section className="flex flex-col lg:flex-row gap-20 items-start mb-40">
+        <section className="flex flex-col lg:flex-row gap-12 md:gap-20 items-start mb-24 md:mb-40">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.2 }}
             className="flex-1"
           >
-            <div className="prose prose-xl prose-p:text-ink/70 prose-p:font-serif prose-p:leading-relaxed space-y-10">
-              <p className="text-2xl text-ink leading-relaxed">
+            <div className="prose prose-lg md:prose-xl prose-p:text-ink/70 prose-p:font-serif prose-p:leading-relaxed space-y-6 md:space-y-10">
+              <p className="text-xl md:text-2xl text-ink leading-relaxed">
                 Tatwamasi began with a simple yet profound vision: to bring holistic development to rural areas, bridging the gap between urban opportunities and rural potential.
               </p>
               <p>
-                Founded on the principles of community empowerment, we recognized that true progress is achieved not by charity, but by enabling individuals to build their own futures. Our name, <span className="text-education italic font-medium">Tatwamasi</span> ("Thou art that"), reflects our belief in the inherent potential within every individual.
+                Founded on the principles of community empowerment, we recognized that true progress is achieved not by charity, but by enabling individuals to build their own futures. Our name, <span className="text-edu-orange italic font-medium">Tatwamasi</span> ("Thou art that"), reflects our belief in the inherent potential within every individual.
               </p>
               <p>
                 Today, we work tirelessly across multiple sectors—education, health, arts, and sports—creating a Hub & Spoke model that reaches deep into rural communities, nurturing seeds of change.
@@ -77,7 +77,7 @@ const AboutPage = () => {
             className="flex-1 w-full"
           >
             <div className="aspect-square rounded-[3rem] bg-white/40 backdrop-blur-md border border-muted/50 p-1 shadow-2xl paper-shadow relative overflow-hidden group">
-              <div className="absolute inset-0 bg-education/5 mix-blend-multiply opacity-50 transition-opacity group-hover:opacity-20 duration-700"></div>
+              <div className="absolute inset-0 bg-edu-orange/5 mix-blend-multiply opacity-50 transition-opacity group-hover:opacity-20 duration-700"></div>
               <div className="w-full h-full border border-muted/30 rounded-[2.8rem] flex items-center justify-center relative overflow-hidden">
                  <div className="text-[20rem] font-bengali text-ink/5 select-none transition-transform duration-1000 group-hover:scale-110">
                   বি
@@ -113,7 +113,7 @@ const AboutPage = () => {
                 <div className="absolute top-[-20%] right-[-10%] text-7xl font-bengali opacity-[0.03] group-hover:opacity-[0.1] transition-opacity duration-700 select-none">
                   {value.motif}
                 </div>
-                <div className="w-14 h-14 mx-auto bg-education/10 text-education rounded-2xl flex items-center justify-center mb-8 text-xl font-serif transition-transform duration-700 group-hover:rotate-12">
+                <div className="w-14 h-14 mx-auto bg-edu-orange/10 text-edu-orange rounded-2xl flex items-center justify-center mb-8 text-xl font-serif transition-transform duration-700 group-hover:rotate-12">
                   0{idx + 1}
                 </div>
                 <h3 className="text-2xl font-serif text-ink mb-6">{value.title}</h3>
