@@ -12,12 +12,12 @@ const CTA = () => {
         ম
       </div>
       
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "0px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div className="flex flex-col items-center mb-8">
             <span className="text-xs font-sans uppercase tracking-[0.4em] text-accent mb-4">Epilogue</span>

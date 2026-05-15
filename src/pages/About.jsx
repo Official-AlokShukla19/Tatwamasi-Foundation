@@ -34,13 +34,13 @@ const AboutPage = () => {
         গল্প
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Page Header - Tighter spacing */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
           <div className="flex flex-col items-center">
@@ -56,7 +56,7 @@ const AboutPage = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="flex-1 w-full"
           >
             <div className="aspect-[4/3] rounded-[1rem] bg-white border border-muted/50 p-2 shadow-xl paper-shadow relative overflow-hidden group">
@@ -81,7 +81,7 @@ const AboutPage = () => {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1"
           >
             <div className="prose prose-lg md:prose-xl prose-p:text-ink/70 prose-p:font-serif prose-p:leading-relaxed space-y-6">

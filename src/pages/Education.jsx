@@ -8,7 +8,7 @@ const Education = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="bg-edu-cream text-edu-brown min-h-screen font-serif selection:bg-edu-mustard/30 relative z-10"
     >
       <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-25 z-0 pointer-events-none"></div>
@@ -23,7 +23,7 @@ const Education = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 text-center max-w-4xl"
         >
           <div className="flex items-center justify-center gap-4 mb-4">

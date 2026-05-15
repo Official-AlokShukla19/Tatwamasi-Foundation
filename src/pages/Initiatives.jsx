@@ -10,7 +10,7 @@ const InitiativesPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="bg-paper min-h-screen relative overflow-hidden z-10"
     >
       {/* Texture background */}
@@ -26,7 +26,7 @@ const InitiativesPage = () => {
           className="text-center mb-16 mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="flex flex-col items-center">
             <span className="text-xs font-sans uppercase tracking-[0.4em] text-accent mb-4">Our Efforts</span>
@@ -48,8 +48,8 @@ const InitiativesPage = () => {
                 className="scroll-mt-24"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 lg:gap-20 items-center`}>
                   {/* Content Card */}
@@ -102,7 +102,7 @@ const InitiativesPage = () => {
                   <div className="flex-1 w-full relative">
                     <motion.div 
                       whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.8 }}
+                      transition={{ duration: 0.5 }}
                       className="aspect-[4/3] bg-primary/5 border border-primary/10 p-2 paper-shadow overflow-hidden relative"
                     >
                       <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent mix-blend-multiply transition-all duration-1000 z-10"></div>

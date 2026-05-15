@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -117,7 +118,7 @@ const Form = () => {
           />
         </div>
         <label className="text-sm text-primary/60 leading-relaxed font-serif italic">
-          I understand that my information will be handled with care, as part of Tatwamasi's <a href="/privacy" className="text-primary hover:text-accent underline decoration-primary/20">Privacy Policy</a>.
+          I understand that my information will be handled with care, as part of Tatwamasi's <Link to="/privacy" className="text-primary hover:text-accent underline decoration-primary/20">Privacy Policy</Link>.
         </label>
       </div>
       {errors.agreed && <p className="text-red-500 text-[10px] -mt-6 uppercase tracking-widest">{errors.agreed}</p>}

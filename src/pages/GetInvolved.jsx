@@ -8,7 +8,7 @@ const GetInvolved = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="pt-32 pb-24 bg-paper min-h-screen relative overflow-hidden"
     >
       {/* Decorative background motif */}

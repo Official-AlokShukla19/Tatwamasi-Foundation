@@ -42,8 +42,8 @@ const Journey = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.5 }}
+          viewport={{ once: true, margin: "0px" }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-24"
         >
           <span className="text-xs font-sans uppercase tracking-[0.3em] text-accent/80 block mb-6">Our Narrative</span>
@@ -66,8 +66,8 @@ const Journey = () => {
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 md:translate-y-6 flex flex-col items-center z-20">
                     <motion.div 
                       whileInView={{ scale: [0, 1] }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.3 }}
                       className="w-4 h-4 rounded-full bg-accent border-4 border-dusty shadow-md"
                     />
                     <span className="hidden md:block text-xs font-serif italic text-primary/40 mt-4 absolute top-8 whitespace-nowrap">{step.date}</span>
@@ -78,8 +78,8 @@ const Journey = () => {
                     <motion.div 
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
                       className={`md:w-1/2 ${isEven ? 'md:pl-24' : 'md:pr-24'}`}
                     >
                       <div className="flex flex-col mb-6">
@@ -101,8 +101,8 @@ const Journey = () => {
                     <motion.div 
                       initial={{ opacity: 0, filter: 'blur(10px)' }}
                       whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 1.5, delay: 0.3 }}
+                      viewport={{ once: true, margin: "0px" }}
+                      transition={{ duration: 0.5 }}
                       className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center"
                     >
                       <div className={`w-full aspect-[4/3] bg-primary/5 rounded-sm border border-primary/10 relative overflow-hidden p-4 ${isEven ? 'md:mr-12' : 'md:ml-12'}`}>

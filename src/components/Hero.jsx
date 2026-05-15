@@ -4,7 +4,7 @@ import StandardButton from './Button';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper torn-edge-bottom z-20 pt-24 pb-32">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper torn-edge-bottom z-20 pt-20 md:pt-28 pb-24 md:pb-32">
       {/* Background elements */}
       <div className="absolute inset-0 texture-overlay mix-blend-multiply z-0"></div>
       
@@ -17,15 +17,15 @@ const Hero = () => {
       </div>
 
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 text-center max-w-5xl mx-auto px-6 flex flex-col items-center"
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center"
       >
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="flex flex-col items-center mb-10 relative z-10"
         >
           <div className="flex items-center gap-4">
@@ -72,7 +72,7 @@ const Hero = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 1.2 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-30 cursor-pointer group/scroll"
         onClick={() => {
           const element = document.getElementById('about');

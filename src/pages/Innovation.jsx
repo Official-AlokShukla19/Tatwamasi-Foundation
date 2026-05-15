@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StoryBridge from '../components/StoryBridge';
-
+import { Link } from 'react-router-dom';
 const Innovation = () => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="bg-inno-midnight text-inno-silver min-h-screen font-sans selection:bg-inno-cyan/30 relative z-10"
     >
       {/* Subtle modern grid/noise overlay */}
@@ -22,7 +22,7 @@ const Innovation = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 text-center max-w-5xl"
         >
           <span className="text-xs font-mono uppercase tracking-[0.5em] text-inno-cyan mb-4 block">The Third Pillar</span>
@@ -61,7 +61,7 @@ const Innovation = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: i * 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`p-8 bg-inno-indigo/20 border ${item.color} backdrop-blur-sm rounded-none group hover:bg-inno-indigo/40 transition-all duration-700`}
               >
                 <div className="w-10 h-[1px] bg-inno-cyan/40 mb-6 group-hover:w-16 transition-all duration-700"></div>
@@ -84,7 +84,7 @@ const Innovation = () => {
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 0.8 }}
                 className="aspect-video bg-inno-indigo/40 border border-inno-cyan/20 p-4 paper-shadow group relative"
               >
                 <div className="absolute inset-0 bg-inno-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -122,7 +122,7 @@ const Innovation = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.8 }}
           className="max-w-3xl relative z-10"
         >
           <h2 className="text-4xl md:text-6xl text-inno-white mb-8 tracking-tight font-light">The Future is <span className="font-serif italic text-inno-cyan font-normal">Human</span></h2>
@@ -130,12 +130,12 @@ const Innovation = () => {
             Join us in engineering a tomorrow that honors our shared heritage.
           </p>
           <div className="flex flex-col md:flex-row gap-5 justify-center">
-            <button className="px-10 py-5 bg-inno-cyan text-inno-midnight rounded-none hover:bg-inno-white transition-colors font-sans uppercase tracking-[0.2em] text-xs">
+            <Link to="/get-involved" className="px-10 py-5 bg-inno-cyan text-inno-midnight rounded-none hover:bg-inno-white transition-colors font-sans uppercase tracking-[0.2em] text-xs text-center inline-block">
               Support Innovation
-            </button>
-            <button className="px-10 py-5 border border-inno-cyan text-inno-cyan rounded-none hover:bg-inno-cyan hover:text-inno-midnight transition-all font-sans uppercase tracking-[0.2em] text-xs">
+            </Link>
+            <Link to="/contact" className="px-10 py-5 border border-inno-cyan text-inno-cyan rounded-none hover:bg-inno-cyan hover:text-inno-midnight transition-all font-sans uppercase tracking-[0.2em] text-xs text-center inline-block">
               Partner With Us
-            </button>
+            </Link>
           </div>
         </motion.div>
       </section>

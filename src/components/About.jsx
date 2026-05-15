@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" className="py-12 md:py-20 relative bg-paper z-10">
+    <section id="about" className="py-16 md:py-24 relative bg-paper z-10">
       <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-50 z-0"></div>
       
-      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
           {/* Narrative Text */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 15 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-10px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="flex-1"
           >
             <div className="flex items-center gap-4 mb-6">
@@ -47,10 +47,10 @@ const About = () => {
 
           {/* Editorial Image Area */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-10px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex-1 relative w-full aspect-[4/5] max-w-sm md:max-w-md"
           >
             {/* Stacked photo effect */}

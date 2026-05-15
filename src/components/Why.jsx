@@ -34,8 +34,8 @@ const Why = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "0px" }}
+          transition={{ duration: 0.4 }}
           className="text-center"
         >
           <div className="flex flex-col items-center mb-16">
@@ -51,8 +51,8 @@ const Why = () => {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1.2, delay: index * 0.2 }}
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="group flex flex-col items-center"
               >
                 <span className="text-[10px] font-bengali text-dusty/20 mb-6 group-hover:text-accent transition-colors duration-700 tracking-[0.5em] uppercase">

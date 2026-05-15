@@ -31,8 +31,8 @@ const Testimonials = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "0px" }}
+          transition={{ duration: 0.4 }}
           className="mb-16 flex flex-col items-center text-center"
         >
           <div className="flex items-center gap-4 mb-6">
@@ -52,8 +52,8 @@ const Testimonials = () => {
               key={story.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 1.2, delay: index * 0.3 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="group relative p-12 md:p-16 bg-dusty border border-primary/20 paper-shadow transition-all duration-700 hover:shadow-xl hover:-translate-y-2"
             >
               {/* Photo corners */}

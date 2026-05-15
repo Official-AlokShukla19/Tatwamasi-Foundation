@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin, Heart } from 'lucide-react';
 import logo from '../assets/TatwamasiLogo.png';
 
 const Footer = () => {
@@ -14,10 +14,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-12 sm:gap-x-10 md:gap-x-12 mb-14">
 
           {/* Brand & Mission — full width on mobile, 4 cols on lg */}
-          <div className="sm:col-span-2 lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
+          <div className="sm:col-span-2 lg:col-span-4 flex flex-col items-start text-left">
             <Link to="/" className="flex items-center gap-4 mb-6 group">
               <img
                 src={logo}
@@ -33,16 +33,33 @@ const Footer = () => {
               "Dedicated to nurturing hope, dignity, and sustainable growth within the heart of rural Bengal."
             </p>
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-dusty/40 hover:text-accent hover:border-accent transition-all duration-500 hover:-translate-y-1"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/p/Tatwamasi-Foundation-100087963862743/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-dusty/40 hover:text-[#1877F2] hover:border-[#1877F2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(24,119,242,0.3)]"
+              >
+                <Facebook size={16} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/tatwamasi-foundation-ngo?trk=public_profile_topcard-current-company"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-dusty/40 hover:text-[#0A66C2] hover:border-[#0A66C2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(10,102,194,0.3)]"
+              >
+                <Linkedin size={16} />
+              </a>
+              <a
+                href="https://www.instagram.com/tatwamasi.foundation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-dusty/40 hover:text-[#E1306C] hover:border-[#E1306C] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(225,48,108,0.3)]"
+              >
+                <Instagram size={16} />
+              </a>
             </div>
           </div>
 
@@ -60,7 +77,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-dusty/60 hover:text-dusty transition-all font-serif italic text-base group flex items-center gap-2"
+                  className="text-dusty/60 hover:text-dusty transition-all font-serif italic text-base group flex items-center gap-2 py-1.5"
                 >
                   <span className="w-0 group-hover:w-3 h-px bg-accent transition-all duration-300 flex-shrink-0"></span>
                   {link.name}
@@ -82,13 +99,13 @@ const Footer = () => {
                   Kolkata, West Bengal 700001
                 </p>
               </div>
-              <a href="tel:+919876543210" className="flex items-center gap-3 text-dusty/70 hover:text-accent transition-colors group w-full">
+              <a href="tel:+919876543210" className="flex items-center gap-3 text-dusty/70 hover:text-accent transition-colors group w-full py-1">
                 <div className="p-2 border border-white/5 bg-white/5 text-accent flex-shrink-0">
                   <Phone size={14} />
                 </div>
                 <span className="text-sm font-serif italic">+91 98765 43210</span>
               </a>
-              <a href="mailto:hello@tatwamasi.org" className="flex items-center gap-3 text-dusty/70 hover:text-accent transition-colors group w-full">
+              <a href="mailto:hello@tatwamasi.org" className="flex items-center gap-3 text-dusty/70 hover:text-accent transition-colors group w-full py-1">
                 <div className="p-2 border border-white/5 bg-white/5 text-accent flex-shrink-0">
                   <Mail size={14} />
                 </div>
@@ -111,16 +128,16 @@ const Footer = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-dusty/40 hover:text-accent transition-colors text-[11px] font-sans tracking-widest uppercase"
+                  className="text-dusty/40 hover:text-accent transition-colors text-[11px] font-sans tracking-widest uppercase py-1.5"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
-            <button className="flex items-center gap-3 bg-accent text-dusty px-5 py-3 text-[11px] font-sans uppercase tracking-[0.2em] hover:bg-edu-orange transition-all duration-500 group">
+            <Link to="/get-involved" className="flex items-center justify-center gap-3 bg-accent text-dusty px-6 py-4 mt-2 w-full sm:w-auto text-[11px] font-sans uppercase tracking-[0.2em] hover:bg-edu-orange hover:shadow-[0_4px_20px_rgba(212,131,81,0.4)] transition-all duration-500 group">
               <Heart size={13} className="group-hover:scale-125 transition-transform flex-shrink-0" />
               Support the Mission
-            </button>
+            </Link>
           </div>
         </div>
 

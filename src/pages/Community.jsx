@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StoryBridge from '../components/StoryBridge';
-
+import { Link } from 'react-router-dom';
 const Community = () => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="bg-comm-beige text-ink min-h-screen font-serif selection:bg-comm-terracotta/30 relative z-10"
     >
       {/* Mud-wall/Rustic texture overlay - Reduced opacity for better contrast */}
@@ -21,7 +21,7 @@ const Community = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 text-center max-w-5xl"
         >
           <span className="text-xs font-sans uppercase tracking-[0.5em] text-comm-terracotta mb-4 block">Our Roots</span>
@@ -161,7 +161,7 @@ const Community = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 group cursor-pointer border border-comm-gold/20 p-6 hover:bg-comm-gold/10 transition-all">
+              <Link to="/education-growth" className="flex items-center gap-4 group cursor-pointer border border-comm-gold/20 p-6 hover:bg-comm-gold/10 transition-all">
                 <div className="w-10 h-10 rounded-full border border-comm-gold flex items-center justify-center text-comm-gold group-hover:bg-comm-gold group-hover:text-comm-red transition-all">
                   →
                 </div>
@@ -169,7 +169,7 @@ const Community = () => {
                   <p className="text-xs font-sans uppercase tracking-[0.3em] text-comm-gold">Read Next Chapter</p>
                   <p className="text-lg font-serif italic">Education & Growth</p>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -197,12 +197,12 @@ const Community = () => {
         >
           <h2 className="text-4xl md:text-5xl text-comm-red mb-10 leading-tight">Will You Walk With Us?</h2>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="px-10 py-5 bg-comm-red text-comm-beige rounded-none hover:bg-comm-clay transition-colors font-sans uppercase tracking-[0.2em] text-xs">
+            <Link to="/get-involved" className="px-10 py-5 bg-comm-red text-comm-beige rounded-none hover:bg-comm-clay transition-colors font-sans uppercase tracking-[0.2em] text-xs text-center inline-block">
               Support Our Community
-            </button>
-            <button className="px-10 py-5 border border-comm-red text-comm-red rounded-none hover:bg-comm-red hover:text-comm-beige transition-all font-sans uppercase tracking-[0.2em] text-xs">
+            </Link>
+            <Link to="/initiatives" className="px-10 py-5 border border-comm-red text-comm-red rounded-none hover:bg-comm-red hover:text-comm-beige transition-all font-sans uppercase tracking-[0.2em] text-xs text-center inline-block">
               Read Our Stories
-            </button>
+            </Link>
           </div>
         </motion.div>
       </section>
