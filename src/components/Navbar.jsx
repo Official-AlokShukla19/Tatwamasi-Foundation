@@ -94,7 +94,7 @@ const Navbar = () => {
           : 'bg-paper md:bg-transparent py-4 md:py-6 border-b border-primary/5 md:border-transparent shadow-sm md:shadow-none'
     }`}>
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-8">
 
           {/* Brand / Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:gap-8 lg:gap-12 xl:gap-14">
+          <div className="hidden md:flex md:items-center md:gap-4 lg:gap-6 xl:gap-8">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
