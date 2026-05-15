@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/TatwamasiLogo.png';
 
 const Navbar = () => {
@@ -21,9 +21,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   useEffect(() => {
     if (location.hash) {
@@ -42,7 +49,7 @@ const Navbar = () => {
   const handleNavClick = (e, path, hash) => {
     e.preventDefault();
     setIsOpen(false);
-    
+
     if (location.pathname !== path) {
       navigate(path + (hash || ''));
     } else {
@@ -72,28 +79,40 @@ const Navbar = () => {
 
   const textColor = isDarkPage && !isScrolled ? 'text-inno-white' : 'text-primary';
   const logoFilter = isDarkPage && !isScrolled ? 'brightness-0 invert' : '';
-  const borderColor = isDarkPage && !isScrolled ? 'border-white/10' : 'border-primary/5';
+  const borderColor = isDarkPage && !isScrolled ? 'border-white/10' : 'border-primary/10';
+  // Hamburger button — always solid background, no transparency
+  const hamburgerBg = isDarkPage && !isScrolled
+    ? 'bg-white text-inno-indigo hover:bg-dusty border-white/30'
+    : 'bg-primary text-dusty hover:bg-ink border-primary/20';
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-paper/95 backdrop-blur-md shadow-lg py-3 ' + borderColor : 'bg-transparent py-6 border-transparent'}`}>
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${
+      isScrolled
+        ? 'bg-paper/95 backdrop-blur-md shadow-lg py-2 md:py-3 ' + borderColor
+        : isDarkPage
+          ? 'bg-inno-midnight/80 md:bg-transparent py-4 md:py-6 border-transparent backdrop-blur-sm md:backdrop-blur-none'
+          : 'bg-paper md:bg-transparent py-4 md:py-6 border-b border-primary/5 md:border-transparent shadow-sm md:shadow-none'
+    }`}>
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
         <div className="flex justify-between items-center">
+
+          {/* Brand / Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-5 lg:gap-8 group">
-              <img 
-                src={logo} 
-                alt="Tatwamasi Logo" 
-                className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain transition-all duration-500 ${logoFilter} ${!isScrolled && !isDarkPage ? 'mix-blend-multiply opacity-90' : ''} group-hover:scale-105`} 
+            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-3 sm:gap-5 lg:gap-8 group">
+              <img
+                src={logo}
+                alt="Tatwamasi Logo"
+                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 object-contain transition-all duration-500 ${logoFilter} ${!isScrolled && !isDarkPage ? 'mix-blend-multiply opacity-90' : ''} group-hover:scale-105`}
               />
-              <div className={`flex flex-col border-l-2 ${borderColor} pl-5 lg:pl-8 py-2`}>
-                <span className={`text-2xl md:text-3xl font-serif tracking-[0.1em] transition-colors duration-500 ${textColor} leading-none`}>Tatwamasi</span>
-                <span className={`text-[11px] md:text-[12px] font-sans tracking-[0.7em] text-accent uppercase mt-2 leading-none`}>Foundation</span>
+              <div className={`flex flex-col border-l-2 ${borderColor} pl-3 sm:pl-4 lg:pl-8 py-1`}>
+                <span className={`text-base sm:text-xl md:text-2xl lg:text-3xl font-serif tracking-[0.1em] transition-colors duration-500 ${textColor} leading-none`}>Tatwamasi</span>
+                <span className={`text-[9px] sm:text-[10px] md:text-[11px] font-sans tracking-[0.4em] sm:tracking-[0.6em] text-accent uppercase mt-1.5 leading-none`}>Foundation</span>
               </div>
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:gap-10 lg:gap-14">
+          <div className="hidden md:flex md:items-center md:gap-8 lg:gap-12 xl:gap-14">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -101,7 +120,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.path + link.hash}
                   onClick={(e) => handleNavClick(e, link.path, link.hash)}
-                  className={`text-[13px] font-sans tracking-[0.35em] uppercase transition-all hover:text-accent relative group ${isActive ? 'text-accent font-bold' : textColor + ' opacity-60 hover:opacity-100'}`}
+                  className={`text-[12px] lg:text-[13px] font-sans tracking-[0.3em] lg:tracking-[0.35em] uppercase transition-all hover:text-accent relative group ${isActive ? 'text-accent font-bold' : textColor + ' opacity-60 hover:opacity-100'}`}
                 >
                   {link.name}
                   <span className={`absolute -bottom-2 left-0 h-[1.5px] bg-accent transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -110,43 +129,79 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Hamburger Button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`${textColor} focus:outline-none p-2 rounded-full hover:bg-white/10 transition-colors`}
+              className={`flex items-center justify-center w-11 h-11 rounded-full border transition-all duration-300 focus:outline-none active:scale-95 shadow-sm ${hamburgerBg}`}
               aria-label="Toggle Menu"
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              <AnimatePresence mode="wait" initial={false}>
+                {isOpen ? (
+                  <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center">
+                    <X size={22} strokeWidth={1.8} />
+                  </motion.span>
+                ) : (
+                  <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center">
+                    <Menu size={22} strokeWidth={1.8} />
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu - Enhanced design */}
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full bg-paper backdrop-blur-xl shadow-2xl border-t border-primary/5 texture-overlay z-50"
-        >
-          <div className="px-8 py-16 flex flex-col space-y-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.path + link.hash}
-                onClick={(e) => handleNavClick(e, link.path, link.hash)}
-                className="text-4xl font-serif italic text-primary/80 hover:text-accent transition-colors flex justify-between items-center group tracking-wide"
-              >
-                {link.name}
-                <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-accent" />
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      )}
-    </nav>
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="md:hidden absolute top-full left-0 w-full bg-paper shadow-2xl border-t border-primary/10 z-50 overflow-y-auto max-h-[calc(100svh-72px)]"
+          >
+            <div className="px-6 sm:px-10 pt-8 pb-14 flex flex-col">
+              {navLinks.map((link, index) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <motion.a
+                    key={link.name}
+                    href={link.path + link.hash}
+                    onClick={(e) => handleNavClick(e, link.path, link.hash)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.055, duration: 0.25 }}
+                    className={`flex justify-between items-center py-5 border-b border-primary/5 group transition-colors ${isActive ? 'text-accent' : 'text-primary/70 hover:text-accent'}`}
+                  >
+                    <span className="text-2xl sm:text-3xl font-serif italic tracking-wide leading-tight">
+                      {link.name}
+                    </span>
+                    <ArrowRight
+                      size={20}
+                      className={`flex-shrink-0 transition-all duration-300 text-accent ${isActive ? 'opacity-100' : 'opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0'}`}
+                    />
+                  </motion.a>
+                );
+              })}
 
+              {/* Mobile Brand Strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-10 flex items-center gap-4 text-[10px] font-sans tracking-[0.4em] uppercase text-primary/25"
+              >
+                <span>Tatwamasi Foundation</span>
+                <span className="font-bengali text-base text-accent/35">তত্ত্বমসি</span>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
