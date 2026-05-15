@@ -4,7 +4,7 @@ import StandardButton from './Button';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper torn-edge-bottom z-20 pt-32 pb-40">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper torn-edge-bottom z-20 pt-24 pb-32">
       {/* Background elements */}
       <div className="absolute inset-0 texture-overlay mix-blend-multiply z-0"></div>
       
@@ -30,12 +30,12 @@ const Hero = () => {
         >
           <div className="flex items-center gap-4">
             <div className="h-px w-8 bg-accent/30"></div>
-            <span className="text-[9px] font-sans uppercase tracking-[0.6em] text-accent ml-[0.6em]">
+            <span className="text-xs font-sans uppercase tracking-[0.6em] text-accent ml-[0.6em]">
               Chapter I
             </span>
             <div className="h-px w-8 bg-accent/30"></div>
           </div>
-          <div className="mt-3 text-[8px] font-sans uppercase tracking-[0.3em] text-primary/20">
+          <div className="mt-3 text-xs font-sans uppercase tracking-[0.3em] text-primary/20">
             The Awakening
           </div>
         </motion.div>
@@ -82,7 +82,7 @@ const Hero = () => {
         }}
       >
         <div className="flex flex-col items-center gap-3">
-          <span className="text-[8px] uppercase tracking-[0.4em] font-sans text-primary/30 group-hover/scroll:text-accent transition-colors ml-[0.4em]">Read On</span>
+          <span className="text-xs uppercase tracking-[0.3em] font-sans text-accent group-hover/scroll:text-primary transition-colors">Read Chapter</span>
           <div className="w-px h-12 bg-gradient-to-b from-primary/30 via-primary/5 to-transparent relative overflow-hidden">
             <motion.div 
               animate={{ y: [0, 48, 48] }}

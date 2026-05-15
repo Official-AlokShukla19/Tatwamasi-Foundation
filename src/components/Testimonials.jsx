@@ -20,7 +20,7 @@ const stories = [
 
 const Testimonials = () => {
   return (
-    <section id="voices" className="py-32 md:py-48 relative bg-paper overflow-hidden z-20">
+    <section id="voices" className="py-20 md:py-24 relative bg-paper overflow-hidden z-20">
       <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-30 z-0"></div>
       
       {/* Decorative background elements */}
@@ -33,7 +33,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
-          className="mb-24 flex flex-col items-center text-center"
+          className="mb-16 flex flex-col items-center text-center"
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-[1px] bg-primary/20"></div>
@@ -74,7 +74,7 @@ const Testimonials = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-primary text-xl">{story.name}</h4>
-                  <p className="font-sans text-xs text-primary/50 tracking-[0.2em] uppercase mt-2">{story.role}</p>
+                  <p className="font-sans text-xs text-primary/70 tracking-[0.2em] uppercase mt-2">{story.role}</p>
                 </div>
               </div>
             </motion.div>

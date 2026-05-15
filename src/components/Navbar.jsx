@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import logo from '../assets/TatwamasiLogo.png';
 
 const Navbar = () => {
@@ -8,6 +9,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Pages with dark backgrounds
+  const isDarkPage = location.pathname === '/innovative-horizons';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,12 +21,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
-  // Handle smooth scrolling to sections
   useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
@@ -50,7 +52,6 @@ const Navbar = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // If element not found, just navigate to it
           navigate(path + hash);
         }
       } else {
@@ -69,30 +70,41 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact', hash: '' },
   ];
 
+  const textColor = isDarkPage && !isScrolled ? 'text-inno-white' : 'text-primary';
+  const logoFilter = isDarkPage && !isScrolled ? 'brightness-0 invert' : '';
+  const borderColor = isDarkPage && !isScrolled ? 'border-white/10' : 'border-primary/5';
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-paper/90 backdrop-blur-md shadow-sm py-4 border-primary/10' : 'bg-transparent py-6 border-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-paper/95 backdrop-blur-md shadow-lg py-3 ' + borderColor : 'bg-transparent py-6 border-transparent'}`}>
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-2 md:gap-3">
-              <img src={logo} alt="Tatwamasi Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain mix-blend-multiply opacity-80" />
-              <span className="text-sm sm:text-base md:text-xl font-serif text-primary tracking-wider uppercase truncate max-w-[200px] sm:max-w-none">Tatwamasi Foundation</span>
+            <Link to="/" onClick={(e) => handleNavClick(e, '/', '')} className="flex items-center gap-5 lg:gap-8 group">
+              <img 
+                src={logo} 
+                alt="Tatwamasi Logo" 
+                className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain transition-all duration-500 ${logoFilter} ${!isScrolled && !isDarkPage ? 'mix-blend-multiply opacity-90' : ''} group-hover:scale-105`} 
+              />
+              <div className={`flex flex-col border-l-2 ${borderColor} pl-5 lg:pl-8 py-2`}>
+                <span className={`text-2xl md:text-3xl font-serif tracking-[0.1em] transition-colors duration-500 ${textColor} leading-none`}>Tatwamasi</span>
+                <span className={`text-[11px] md:text-[12px] font-sans tracking-[0.7em] text-accent uppercase mt-2 leading-none`}>Foundation</span>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:gap-10 lg:gap-14">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path && location.hash === link.hash;
+              const isActive = location.pathname === link.path;
               return (
                 <a
                   key={link.name}
                   href={link.path + link.hash}
                   onClick={(e) => handleNavClick(e, link.path, link.hash)}
-                  className={`text-xs font-sans tracking-[0.2em] uppercase transition-colors hover:text-accent relative group ${isActive ? 'text-accent font-medium' : 'text-primary/70'}`}
+                  className={`text-[13px] font-sans tracking-[0.35em] uppercase transition-all hover:text-accent relative group ${isActive ? 'text-accent font-bold' : textColor + ' opacity-60 hover:opacity-100'}`}
                 >
                   {link.name}
-                  <span className={`absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1px] bg-accent transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  <span className={`absolute -bottom-2 left-0 h-[1.5px] bg-accent transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                 </a>
               );
             })}
@@ -102,32 +114,39 @@ const Navbar = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary/80 hover:text-primary focus:outline-none"
+              className={`${textColor} focus:outline-none p-2 rounded-full hover:bg-white/10 transition-colors`}
+              aria-label="Toggle Menu"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Enhanced design */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-paper/95 backdrop-blur-lg shadow-xl border-t border-primary/10 texture-overlay mix-blend-multiply">
-          <div className="px-6 py-8 flex flex-col space-y-6">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden absolute top-full left-0 w-full bg-paper backdrop-blur-xl shadow-2xl border-t border-primary/5 texture-overlay z-50"
+        >
+          <div className="px-8 py-16 flex flex-col space-y-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.path + link.hash}
                 onClick={(e) => handleNavClick(e, link.path, link.hash)}
-                className="text-2xl font-serif italic text-primary/80 hover:text-accent border-b border-primary/10 pb-4"
+                className="text-4xl font-serif italic text-primary/80 hover:text-accent transition-colors flex justify-between items-center group tracking-wide"
               >
                 {link.name}
+                <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-accent" />
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
+
   );
 };
 

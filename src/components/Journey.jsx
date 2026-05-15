@@ -34,7 +34,7 @@ const steps = [
 
 const Journey = () => {
   return (
-    <section id="journey" className="py-32 md:py-48 relative overflow-hidden bg-dusty torn-edge-bottom z-10 pb-40">
+    <section id="journey" className="py-24 md:py-32 relative overflow-hidden bg-dusty torn-edge-bottom z-10 pb-28">
       {/* Texture Overlay */}
       <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-50 z-0"></div>
 
@@ -44,7 +44,7 @@ const Journey = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.5 }}
-          className="text-center mb-40"
+          className="text-center mb-24"
         >
           <span className="text-xs font-sans uppercase tracking-[0.3em] text-accent/80 block mb-6">Our Narrative</span>
           <h2 className="text-5xl md:text-7xl font-serif text-primary mb-10 tracking-tight">The Unfolding Path</h2>
@@ -57,7 +57,7 @@ const Journey = () => {
           {/* Spine of the book / Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/20 to-transparent transform md:-translate-x-1/2"></div>
           
-          <div className="space-y-32 md:space-y-48">
+          <div className="space-y-24 md:space-y-32">
             {steps.map((step, index) => {
               const isEven = index % 2 === 0;
               return (

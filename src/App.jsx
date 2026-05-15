@@ -8,6 +8,7 @@ import Initiatives from './pages/Initiatives';
 import GetInvolved from './pages/GetInvolved';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Legal from './pages/Legal';
 import Education from './pages/Education';
 import Community from './pages/Community';
 import Innovation from './pages/Innovation';
@@ -42,6 +43,10 @@ function App() {
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Legal />} />
+              <Route path="/refund-policy" element={<Legal />} />
+              <Route path="/disclaimer" element={<Legal />} />
+              <Route path="/cookie-policy" element={<Legal />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </motion.div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import StoryBridge from '../components/StoryBridge';
 
 const Education = () => {
   return (
@@ -10,143 +11,168 @@ const Education = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="bg-edu-cream text-edu-brown min-h-screen font-serif selection:bg-edu-mustard/30 relative z-10"
     >
-      <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-50 z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-25 z-0 pointer-events-none"></div>
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pb-20">
-        {/* Subtle chalkboard/notebook texture effect */}
+      {/* Hero Section - Tightened */}
+      <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden px-6 py-12 md:py-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-edu-mustard/5 z-0"></div>
-        <div className="absolute top-10 right-10 text-[20rem] font-bengali opacity-[0.03] rotate-12 text-edu-maroon select-none pointer-events-none">
+        <div className="absolute top-10 right-10 text-[12rem] font-bengali opacity-[0.02] rotate-12 text-edu-maroon select-none pointer-events-none">
           শি
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 text-center max-w-4xl pt-20"
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 text-center max-w-4xl"
         >
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px w-16 bg-edu-orange/40"></div>
-            <span className="text-xs font-sans uppercase tracking-[0.4em] text-edu-orange">Chapter One</span>
-            <div className="h-px w-16 bg-edu-orange/40"></div>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-8 bg-edu-orange/30"></div>
+            <span className="text-xs font-sans uppercase tracking-[0.4em] text-edu-orange">Education & Growth</span>
+            <div className="h-px w-8 bg-edu-orange/30"></div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-8xl text-edu-brown mb-8 leading-[1.1] tracking-tight">
-            Education Lights the <span className="italic text-edu-mustard block mt-2">Path Forward</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-edu-brown mb-6 leading-tight tracking-tight">
+            Education Lights the <span className="italic text-edu-mustard block mt-1">Path Forward</span>
           </h1>
-          <p className="text-lg md:text-2xl text-edu-brown/70 max-w-2xl mx-auto italic leading-relaxed">
-            Every child carries a future. We are simply providing the notebook where they can write their own story.
+          <p className="text-lg md:text-xl text-edu-brown/70 max-w-2xl mx-auto italic leading-relaxed">
+            Every child carries a future. We are providing the notebook where they can write their own story.
           </p>
-        </motion.div>
-        
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          className="absolute bottom-12 flex flex-col items-center"
-        >
-          <span className="text-[10px] font-sans uppercase tracking-[0.3em] text-edu-orange/60 mb-4">Turn the Page</span>
-          <div className="w-px h-16 bg-edu-brown/10 relative overflow-hidden">
-            <motion.div 
-              animate={{ y: [0, 64, 64] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full h-1/3 bg-edu-mustard"
-            />
-          </div>
         </motion.div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-32 px-6 md:px-12 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+      {/* Narrative Bridge 1 - Reduced spacing */}
+      <div className="py-6">
+        <StoryBridge 
+          bengaliText="জ্ঞান" 
+          imageLabel="The Spark"
+          title="More Than a Classroom"
+          subtitle="It is a sanctuary of possibility where first-generation learners rewrite the history of their entire lineage."
+        />
+      </div>
+
+      {/* Story Section - IMAGE FIRST SEQUENCE */}
+      <section className="py-16 md:py-24 px-6 md:px-12 relative z-10">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-20 items-center">
+          {/* Image Content First Side */}
           <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5 }}
-            className="md:w-1/2"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="lg:w-1/2 relative order-1"
           >
-            <h2 className="text-4xl md:text-5xl text-edu-maroon mb-8">Roots of Knowledge</h2>
-            <div className="prose prose-xl prose-p:text-edu-brown/80 prose-p:leading-relaxed">
-              <p>
-                In many rural communities, a classroom is more than a room—it is a sanctuary of possibility. For first-generation learners, opening a book is an act of quiet rebellion against circumstance.
-              </p>
-              <p>
-                We realized early on that empowerment doesn't start with a curriculum; it starts with belief. When a young girl gains access to education, she doesn't just change her life; she rewrites the history of her entire community.
-              </p>
+            <div className="aspect-[4/5] bg-edu-brown/5 border border-edu-brown/20 p-2 shadow-xl relative group overflow-hidden paper-shadow">
+               <div className="absolute inset-0 bg-edu-mustard/5 mix-blend-multiply opacity-30 group-hover:opacity-10 transition-opacity duration-1000"></div>
+               <div className="w-full h-full border border-edu-brown/10 border-dashed flex items-center justify-center bg-white/40 relative z-10">
+                 <span className="font-sans text-xs tracking-widest uppercase text-edu-brown/50 text-center p-8 leading-loose italic">
+                   [Cinematic Documentary Photo: A child reading by candlelight, illustrating the transition to digital literacy]
+                 </span>
+               </div>
+               <div className="absolute top-0 right-0 p-4 text-4xl text-edu-mustard/10 font-bengali select-none">বই</div>
+               <div className="absolute bottom-4 left-4 bg-paper/90 px-3 py-1 border border-muted/30 text-[10px] font-serif italic text-edu-brown/40 uppercase tracking-widest">
+                 Ref: #EDU_01
+               </div>
             </div>
           </motion.div>
+
+          {/* Text Content */}
           <motion.div 
-            initial={{ opacity: 0, rotate: 2 }}
-            whileInView={{ opacity: 1, rotate: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5 }}
-            className="md:w-1/2 relative"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="lg:w-1/2 order-2"
           >
-            <div className="aspect-[4/3] bg-edu-brown/5 border border-edu-brown/20 p-3 shadow-md relative">
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-edu-mustard m-2"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-edu-mustard m-2"></div>
-              <div className="w-full h-full border border-edu-brown/10 border-dashed flex items-center justify-center bg-edu-cream">
-                <span className="font-sans text-xs tracking-widest uppercase text-edu-brown/40">Archival Photo: Rural Classroom</span>
-              </div>
+            <span className="text-xs font-sans uppercase tracking-[0.5em] text-edu-orange mb-4 block">Our Philosophy</span>
+            <h2 className="text-3xl md:text-5xl text-edu-maroon mb-6 leading-tight">Roots of Knowledge</h2>
+            <div className="prose prose-lg prose-p:text-edu-brown/80 prose-p:leading-relaxed mb-8">
+              <p className="italic text-xl">
+                "We realized early on that empowerment doesn't start with a curriculum; it starts with belief."
+              </p>
+              <p className="text-base text-edu-brown/60">
+                When a child gains access to education, they become the bridge between their family's struggle and a world of opportunity. We nurture that spark through holistic engagement.
+              </p>
             </div>
-            {/* Handwritten note */}
-            <div className="absolute -bottom-8 -right-4 bg-white px-4 py-3 shadow-lg rotate-[-3deg] border border-edu-brown/10">
-              <span className="font-sans italic text-sm text-edu-brown/70">"The first lesson is hope."</span>
+            
+            <div className="grid grid-cols-2 gap-8 pt-6 border-t border-edu-brown/5">
+              <div>
+                <h4 className="text-lg text-edu-maroon mb-2 font-serif">Holistic Growth</h4>
+                <p className="text-xs text-edu-brown/70 leading-relaxed italic">Beyond textbooks, we focus on emotional intelligence and creative expression.</p>
+              </div>
+              <div>
+                <h4 className="text-lg text-edu-maroon mb-2 font-serif">Digital Literacy</h4>
+                <p className="text-xs text-edu-brown/70 leading-relaxed italic">Bridging the rural-urban divide through technology and coding workshops.</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="py-32 px-6 bg-white/40 border-y border-edu-brown/10 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-xs font-sans uppercase tracking-[0.4em] text-edu-orange block mb-6">Milestones</span>
-          <h2 className="text-4xl md:text-5xl text-edu-brown mb-24">The Unfolding Path</h2>
+      {/* Impact Timeline - Tightened spacing */}
+      <section className="py-20 md:py-24 bg-edu-brown text-edu-cream relative overflow-hidden">
+        <div className="absolute inset-0 paper-grain opacity-10"></div>
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl mb-16 font-serif tracking-tight">The Unfolding Path</h2>
           
-          <div className="space-y-16">
+          <div className="relative space-y-16 md:space-y-24">
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-edu-mustard/10 -translate-x-1/2 hidden md:block"></div>
+            
             {[
-              { year: "Year I", text: "Libraries created in remote villages." },
-              { year: "Year II", text: "Skill programs launched for young women." },
-              { year: "Year III", text: "Hundreds of first-generation learners empowered." }
-            ].map((item, i) => (
+              { year: "The Seed", title: "Library Foundations", desc: "Establishing safe havens for reading and curiosity in 15 remote villages." },
+              { year: "The Growth", title: "Empowering Young Women", desc: "Specialized skill-building and leadership programs for girls aged 14-18." },
+              { year: "The Harvest", title: "First-Gen Success", desc: "Seeing our first cohort of students transition to higher education." }
+            ].map((item, index) => (
               <motion.div 
-                key={i}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1, delay: i * 0.2 }}
-                className="flex flex-col md:flex-row items-center gap-8 justify-center group"
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+                className={`relative flex flex-col md:flex-row items-center gap-8 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
-                <span className="font-sans text-sm tracking-[0.3em] uppercase text-edu-mustard">{item.year}</span>
-                <div className="w-12 h-px bg-edu-brown/20 group-hover:bg-edu-mustard transition-colors"></div>
-                <p className="text-2xl text-edu-brown/80 italic">{item.text}</p>
+                <div className="md:w-1/2 md:text-right px-6">
+                  <div className={`flex flex-col ${index % 2 === 1 ? 'md:items-start' : 'md:items-end'}`}>
+                    <span className="text-xs font-sans uppercase tracking-[0.4em] text-edu-mustard mb-2 block">{item.year}</span>
+                    <h3 className="text-2xl md:text-3xl mb-3 font-serif italic">{item.title}</h3>
+                    <p className="text-edu-cream/60 text-base italic leading-relaxed max-w-sm">{item.desc}</p>
+                  </div>
+                </div>
+                <div className="w-2 h-2 rounded-full bg-edu-mustard shadow-[0_0_10px_rgba(200,146,58,0.5)] z-10 relative"></div>
+                <div className="md:w-1/2"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Closing Section */}
-      <section className="py-40 relative flex flex-col items-center text-center px-6 overflow-hidden z-10">
-        <div className="absolute inset-0 bg-gradient-to-t from-edu-mustard/10 to-transparent -z-10"></div>
+      {/* Narrative Bridge 2 - Tighter */}
+      <div className="py-6">
+        <StoryBridge 
+          variant="light"
+          bengaliText="আলো" 
+          imageLabel="The Light"
+          title="A New Dawn"
+          subtitle="Education is not the filling of a vessel, but the lighting of a fire."
+        />
+      </div>
+
+      {/* Closing Section - Tighter spacing */}
+      <section className="py-16 md:py-24 relative z-10 flex flex-col items-center text-center px-6">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-edu-brown/10 to-transparent"></div>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 2 }}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <div className="text-6xl text-edu-orange/20 mb-8 font-bengali">☼</div>
-          <h2 className="text-5xl md:text-7xl text-edu-maroon mb-8 tracking-tight">Dawn of a New Chapter</h2>
-          <p className="text-xl text-edu-brown/70 italic leading-relaxed mb-16">
-            With every page turned, a community grows stronger. The story of education is the story of a brighter sunrise.
-          </p>
-          <div className="flex items-center justify-center gap-4 opacity-40">
-            <div className="w-20 h-[1px] bg-edu-brown"></div>
-            <span className="font-bengali text-3xl text-edu-brown">শিক্ষা</span>
-            <div className="w-20 h-[1px] bg-edu-brown"></div>
+          <h2 className="text-3xl md:text-5xl text-edu-maroon mb-10 leading-tight">Be Part of Their Story</h2>
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <button className="px-10 py-5 bg-edu-maroon text-edu-cream rounded-none hover:bg-edu-orange transition-colors font-sans uppercase tracking-[0.2em] text-xs">
+              Sponsor a Student
+            </button>
+            <button className="px-10 py-5 border border-edu-maroon text-edu-maroon rounded-none hover:bg-edu-maroon hover:text-edu-cream transition-all font-sans uppercase tracking-[0.2em] text-xs">
+              Volunteer Locally
+            </button>
           </div>
         </motion.div>
       </section>

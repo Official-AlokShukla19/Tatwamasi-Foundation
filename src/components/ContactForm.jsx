@@ -40,7 +40,7 @@ const ContactForm = () => {
         </p>
         <button 
           onClick={() => setStatus('idle')} 
-          className="mt-8 text-[10px] font-sans tracking-[0.3em] text-accent hover:text-primary uppercase transition-colors"
+          className="mt-8 text-xs font-sans tracking-[0.3em] text-accent hover:text-primary uppercase transition-colors"
         >
           Send another message
         </button>
@@ -52,7 +52,7 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit} className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="relative group">
-          <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Name</label>
+          <label className="block text-xs font-sans uppercase tracking-[0.3em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Name</label>
           <input 
             required
             type="text"
@@ -63,7 +63,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="relative group">
-          <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Email</label>
+          <label className="block text-xs font-sans uppercase tracking-[0.3em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Email</label>
           <input 
             required
             type="email"
@@ -76,7 +76,7 @@ const ContactForm = () => {
       </div>
 
       <div className="relative group">
-        <label className="block text-[10px] font-sans uppercase tracking-[0.4em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Subject</label>
+        <label className="block text-xs font-sans uppercase tracking-[0.4em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Subject</label>
         <input 
           required
           type="text"
@@ -88,7 +88,7 @@ const ContactForm = () => {
       </div>
 
       <div className="relative group">
-        <label className="block text-[10px] font-sans uppercase tracking-[0.4em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Message</label>
+        <label className="block text-xs font-sans uppercase tracking-[0.4em] text-primary/40 mb-2 group-focus-within:text-accent transition-colors">Message</label>
         <textarea 
           required
           rows="4"

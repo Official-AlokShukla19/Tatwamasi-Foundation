@@ -22,7 +22,7 @@ const statements = [
 
 const Why = () => {
   return (
-    <section id="why" className="py-40 relative bg-primary text-dusty overflow-hidden z-20">
+    <section id="why" className="py-20 relative bg-primary text-dusty overflow-hidden z-20">
       <div className="absolute inset-0 texture-overlay opacity-30 mix-blend-overlay z-0"></div>
       
       {/* Decorative large motif in background */}
@@ -38,14 +38,14 @@ const Why = () => {
           transition={{ duration: 1 }}
           className="text-center"
         >
-          <div className="flex flex-col items-center mb-24">
+          <div className="flex flex-col items-center mb-16">
             <h2 className="text-xs font-sans uppercase tracking-[0.5em] text-accent mb-6">
               Core Philosophy
             </h2>
             <div className="w-16 h-[1px] bg-accent/40"></div>
           </div>
 
-          <div className="space-y-32">
+          <div className="space-y-20">
             {statements.map((statement, index) => (
               <motion.div
                 key={index}
