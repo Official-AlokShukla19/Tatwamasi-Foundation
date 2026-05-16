@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
@@ -76,11 +76,35 @@ const Contact = () => {
             </div>
 
             <div className="mt-20 pt-10 border-t border-muted/30">
-              <h4 className="text-xs font-sans uppercase tracking-[0.3em] text-ink/30 mb-8">Follow Our Social Journey</h4>
-              <div className="flex space-x-8">
-                <a href="#" className="text-ink/30 hover:text-edu-orange transition-all duration-500 transform hover:scale-110"><Facebook size={24} /></a>
-                <a href="#" className="text-ink/30 hover:text-inno-cyan transition-all duration-500 transform hover:scale-110"><Twitter size={24} /></a>
-                <a href="#" className="text-ink/30 hover:text-comm-terracotta transition-all duration-500 transform hover:scale-110"><Instagram size={24} /></a>
+              <h4 className="text-[10px] font-sans uppercase tracking-[0.4em] text-accent/80 mb-6 ink-stamp">Follow Our Social Journey</h4>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.facebook.com/p/Tatwamasi-Foundation-100087963862743/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 border border-ink/20 flex items-center justify-center text-ink/40 hover:text-[#1877F2] hover:border-[#1877F2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(24,119,242,0.15)] ink-border"
+                >
+                  <Facebook size={16} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/tatwamasi-foundation-ngo?trk=public_profile_topcard-current-company"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-10 h-10 border border-ink/20 flex items-center justify-center text-ink/40 hover:text-[#0A66C2] hover:border-[#0A66C2] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(10,102,194,0.15)] ink-border"
+                >
+                  <Linkedin size={16} />
+                </a>
+                <a
+                  href="https://www.instagram.com/tatwamasi.foundation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 border border-ink/20 flex items-center justify-center text-ink/40 hover:text-[#E1306C] hover:border-[#E1306C] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(225,48,108,0.15)] ink-border"
+                >
+                  <Instagram size={16} />
+                </a>
               </div>
             </div>
           </motion.div>

@@ -133,18 +133,18 @@ const Navbar = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`flex items-center justify-center w-11 h-11 rounded-full border transition-all duration-300 focus:outline-none active:scale-95 shadow-sm ${hamburgerBg}`}
+              className={`flex items-center justify-center w-11 h-11 border transition-all duration-300 focus:outline-none active:scale-95 shadow-sm ink-border ${hamburgerBg}`}
               aria-label="Toggle Menu"
               aria-expanded={isOpen}
             >
               <AnimatePresence mode="wait" initial={false}>
                 {isOpen ? (
-                  <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center">
-                    <X size={22} strokeWidth={1.8} />
+                  <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center ink-stamp">
+                    <X size={22} strokeWidth={1.5} />
                   </motion.span>
                 ) : (
-                  <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center">
-                    <Menu size={22} strokeWidth={1.8} />
+                  <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center justify-center ink-stamp">
+                    <Menu size={22} strokeWidth={1.5} />
                   </motion.span>
                 )}
               </AnimatePresence>
@@ -161,9 +161,10 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="md:hidden absolute top-full left-0 w-full bg-paper shadow-2xl border-t border-primary/10 z-50 overflow-y-auto max-h-[calc(100svh-72px)]"
+            className="md:hidden absolute top-full left-0 w-full bg-paper shadow-2xl border-t border-ink/10 z-50 overflow-y-auto max-h-[calc(100svh-72px)] relative"
           >
-            <div className="px-6 sm:px-10 pt-8 pb-14 flex flex-col">
+            <div className="absolute inset-0 texture-overlay mix-blend-multiply opacity-40 z-0 pointer-events-none"></div>
+            <div className="px-6 sm:px-10 pt-8 pb-14 flex flex-col relative z-10">
               {navLinks.map((link, index) => {
                 const isActive = location.pathname === link.path;
                 return (

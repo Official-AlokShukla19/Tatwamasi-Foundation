@@ -56,13 +56,13 @@ const Community = () => {
               transition={{ duration: 1.2 }}
               className="relative order-1"
             >
-              <div className="aspect-[4/3] md:aspect-[4/5] bg-comm-clay/10 border border-comm-terracotta/20 paper-shadow overflow-hidden group">
+              <div className="aspect-[4/3] md:aspect-[4/5] bg-comm-clay/10 ink-border paper-shadow overflow-hidden group">
                 <div className="absolute inset-0 bg-comm-terracotta/5 mix-blend-multiply"></div>
-                <div className="w-full h-full flex items-center justify-center italic text-comm-clay/60 p-12 text-center border-8 border-white/50 m-4">
-                  [Documentary Portrait: An elder sharing stories by the banyan tree]
+                <div className="w-full h-full flex items-center justify-center italic text-comm-clay/60 p-12 text-center border-8 border-white/50 m-4 group-hover:scale-[1.02] transition-transform duration-1000">
+                  <span className="ink-stamp">[Documentary Portrait: An elder sharing stories by the banyan tree]</span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-20 h-20 border border-comm-terracotta/10 rounded-full flex items-center justify-center text-3xl text-comm-terracotta/20 animate-spin-slow z-20 bg-comm-beige shadow-sm">
+              <div className="absolute -bottom-6 -left-6 w-20 h-20 border border-comm-terracotta/20 rounded-full flex items-center justify-center text-3xl text-comm-terracotta/40 animate-spin-slow z-20 bg-comm-beige shadow-sm ink-stamp">
                 ❈
               </div>
             </motion.div>
@@ -79,20 +79,20 @@ const Community = () => {
               <p className="text-xl text-comm-clay leading-relaxed mb-6 italic font-medium">
                 In a world that moves too fast, our traditions are the weight that keeps us from drifting. We live our culture through every collective action.
               </p>
-              <div className="w-20 h-px bg-comm-terracotta/20 mb-8"></div>
+              <div className="w-20 h-[2px] bg-comm-terracotta/20 mb-8 ink-stamp"></div>
               
               <div className="space-y-6">
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-comm-terracotta/20 flex items-center justify-center text-comm-terracotta font-serif text-xs">01</div>
+                <div className="flex gap-5 group cursor-pointer">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-comm-terracotta/30 flex items-center justify-center text-comm-terracotta font-serif text-xs group-hover:bg-comm-terracotta group-hover:text-comm-beige transition-colors duration-500 ink-stamp">01</div>
                   <div>
-                    <h4 className="text-lg text-comm-red mb-1">Oral History Archive</h4>
+                    <h4 className="text-lg text-comm-red mb-1 group-hover:text-comm-terracotta transition-colors">Oral History Archive</h4>
                     <p className="text-comm-clay/80 text-sm">Recording the forgotten songs and stories of rural Bengal.</p>
                   </div>
                 </div>
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-comm-terracotta/20 flex items-center justify-center text-comm-terracotta font-serif text-xs">02</div>
+                <div className="flex gap-5 group cursor-pointer">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-comm-terracotta/30 flex items-center justify-center text-comm-terracotta font-serif text-xs group-hover:bg-comm-terracotta group-hover:text-comm-beige transition-colors duration-500 ink-stamp">02</div>
                   <div>
-                    <h4 className="text-lg text-comm-red mb-1">Artisan Guilds</h4>
+                    <h4 className="text-lg text-comm-red mb-1 group-hover:text-comm-terracotta transition-colors">Artisan Guilds</h4>
                     <p className="text-comm-clay/80 text-sm">Reviving traditional crafts as a sustainable livelihood.</p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const Community = () => {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-12 md:mb-16">
-            <span className="text-xs font-sans uppercase tracking-[0.5em] text-comm-gold/80 mb-4 block">Documentary Series</span>
+            <span className="text-xs font-sans uppercase tracking-[0.5em] text-comm-gold/80 mb-4 block ink-stamp">Documentary Series</span>
             <h2 className="text-4xl md:text-6xl mb-4 leading-none tracking-tight font-serif">The Matriarchs of <span className="italic block md:inline text-comm-gold font-normal">Change</span></h2>
           </div>
 
@@ -120,18 +120,18 @@ const Community = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
-                className="aspect-video bg-white/5 border border-white/10 relative group overflow-hidden mb-8"
+                className="aspect-video bg-white/5 border border-white/20 relative group overflow-hidden mb-8"
               >
-                 <div className="w-full h-full flex items-center justify-center italic text-comm-beige/40 p-12 text-center">
-                   [Cinematic Visual: A group of women organizing a community meeting]
+                 <div className="w-full h-full flex items-center justify-center italic text-comm-beige/40 p-12 text-center group-hover:scale-[1.02] transition-transform duration-1000">
+                   <span className="ink-stamp">[Cinematic Visual: A group of women organizing a community meeting]</span>
                  </div>
                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-comm-red to-transparent">
-                   <p className="text-xs font-sans tracking-widest uppercase text-comm-gold">Session 42: Economic Independence workshop</p>
+                   <p className="text-xs font-sans tracking-widest uppercase text-comm-gold ink-stamp">Session 42: Economic Independence workshop</p>
                  </div>
               </motion.div>
 
               <div className="space-y-6">
-                <blockquote className="text-2xl md:text-3xl italic leading-tight text-comm-gold font-serif border-l-2 border-comm-gold/40 pl-6">
+                <blockquote className="pull-quote text-comm-gold border-comm-gold/40 text-2xl md:text-3xl leading-tight">
                   "When a woman rises, she doesn't just lift herself; she lifts the roof over her family's head and the future of her children."
                 </blockquote>
                 <p className="text-lg leading-relaxed text-comm-beige/80 max-w-2xl italic">

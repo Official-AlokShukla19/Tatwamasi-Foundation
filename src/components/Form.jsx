@@ -40,22 +40,22 @@ const Form = () => {
 
   if (status === 'success') {
     return (
-      <div className="bg-primary/5 p-8 md:p-12 border border-primary/20 transition-all duration-1000 animate-in fade-in slide-in-from-bottom-4 relative">
-        <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/30 m-3"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/30 m-3"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/30 m-3"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/30 m-3"></div>
+      <div className="bg-primary/5 p-8 md:p-12 ink-border transition-all duration-1000 animate-in fade-in slide-in-from-bottom-4 relative">
+        <div className="absolute top-0 left-0 w-6 h-6 border-t-[1px] border-l-[1px] border-ink/40 m-3"></div>
+        <div className="absolute top-0 right-0 w-6 h-6 border-t-[1px] border-r-[1px] border-ink/40 m-3"></div>
+        <div className="absolute bottom-0 left-0 w-6 h-6 border-b-[1px] border-l-[1px] border-ink/40 m-3"></div>
+        <div className="absolute bottom-0 right-0 w-6 h-6 border-b-[1px] border-r-[1px] border-ink/40 m-3"></div>
         
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-primary border border-ink/20 ink-stamp">
           ✓
         </div>
-        <h3 className="text-3xl font-serif text-primary mb-4">A Note of Thanks</h3>
-        <p className="text-primary/60 font-serif italic leading-relaxed">
-          "Your message has been received. Like a new chapter in our shared story, we will reflect on it and reach back to you soon."
-        </p>
+        <h3 className="text-3xl font-serif text-primary mb-4 ink-stamp">A Note of Thanks</h3>
+        <blockquote className="pull-quote text-lg my-6">
+          Your message has been received. Like a new chapter in our shared story, we will reflect on it and reach back to you soon.
+        </blockquote>
         <button 
           onClick={() => setStatus('idle')} 
-          className="mt-10 text-xs font-sans tracking-[0.3em] text-accent/60 hover:text-accent uppercase transition-colors"
+          className="mt-8 text-[10px] font-sans tracking-[0.4em] text-primary/40 hover:text-primary uppercase transition-colors ink-stamp"
         >
           Send another note
         </button>
@@ -66,43 +66,43 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-12">
       <div className="relative group">
-        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-accent transition-colors">Your Name</label>
+        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-ink transition-colors ink-stamp">Your Name</label>
         <input 
           type="text"
           value={formData.name}
           onChange={(e) => setFormData({...formData, name: e.target.value})}
-          className={`w-full bg-transparent border-b ${errors.name ? 'border-red-400' : 'border-primary/20'} focus:border-accent outline-none py-2 text-xl font-serif italic text-primary transition-all placeholder:text-primary/20`}
+          className={`w-full bg-transparent border-b ${errors.name ? 'border-red-400' : 'border-ink/20'} focus:border-ink outline-none py-2 text-xl font-serif italic text-ink transition-all placeholder:text-primary/20 focus:bg-ink/5 hover:bg-ink/[0.02]`}
           placeholder="e.g. Aditi Das"
         />
         {errors.name && <p className="text-red-500 text-[10px] mt-3 uppercase tracking-widest">{errors.name}</p>}
       </div>
 
       <div className="relative group">
-        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-accent transition-colors">How to Reach You</label>
+        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-ink transition-colors ink-stamp">How to Reach You</label>
         <input 
           type="text"
           value={formData.contact}
           onChange={(e) => setFormData({...formData, contact: e.target.value})}
-          className={`w-full bg-transparent border-b ${errors.contact ? 'border-red-400' : 'border-primary/20'} focus:border-accent outline-none py-2 text-xl font-serif italic text-primary transition-all placeholder:text-primary/20`}
+          className={`w-full bg-transparent border-b ${errors.contact ? 'border-red-400' : 'border-ink/20'} focus:border-ink outline-none py-2 text-xl font-serif italic text-ink transition-all placeholder:text-primary/20 focus:bg-ink/5 hover:bg-ink/[0.02]`}
           placeholder="Email or phone number"
         />
         {errors.contact && <p className="text-red-500 text-[10px] mt-3 uppercase tracking-widest">{errors.contact}</p>}
       </div>
 
       <div className="relative group">
-        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-accent transition-colors">Your Interest</label>
+        <label className="block text-[10px] font-sans uppercase tracking-[0.3em] text-primary/40 mb-3 group-focus-within:text-ink transition-colors ink-stamp">Your Interest</label>
         <select 
           value={formData.type}
           onChange={(e) => setFormData({...formData, type: e.target.value})}
-          className={`w-full bg-transparent border-b ${errors.type ? 'border-red-400' : 'border-primary/20'} focus:border-accent outline-none py-2 text-xl font-serif italic text-primary transition-all appearance-none cursor-pointer`}
+          className={`w-full bg-transparent border-b ${errors.type ? 'border-red-400' : 'border-ink/20'} focus:border-ink outline-none py-2 text-xl font-serif italic text-ink transition-all appearance-none cursor-pointer focus:bg-ink/5 hover:bg-ink/[0.02]`}
         >
           <option value="" className="not-italic text-primary/40 bg-paper">Select a path...</option>
-          <option value="teaching" className="bg-paper">Education & Mentorship</option>
-          <option value="events" className="bg-paper">Community Building</option>
-          <option value="logistics" className="bg-paper">Sustainable Support</option>
-          <option value="medical" className="bg-paper">Health & Wellness</option>
+          <option value="teaching" className="bg-paper text-ink">Education & Mentorship</option>
+          <option value="events" className="bg-paper text-ink">Community Building</option>
+          <option value="logistics" className="bg-paper text-ink">Sustainable Support</option>
+          <option value="medical" className="bg-paper text-ink">Health & Wellness</option>
         </select>
-        <div className="absolute right-0 bottom-4 pointer-events-none text-primary/30">
+        <div className="absolute right-0 bottom-4 pointer-events-none text-ink/30 ink-stamp">
           ↓
         </div>
         {errors.type && <p className="text-red-500 text-[10px] mt-3 uppercase tracking-widest">{errors.type}</p>}
